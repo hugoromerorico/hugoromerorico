@@ -14,6 +14,7 @@
 
 ### 📈 GitHub Stats
 [![Hugo's GitHub Stats](https://github-readme-stats.vercel.app/api?username=hugo-romero-mm&show_icons=true&theme=radical&count_private=true)](https://github.com/hugo-romero-mm)
+[![Hugo's GitHub Stats](https://github-readme-stats.vercel.app/api?username=hugo-romero-mm&count_private=true)](https://github.com/hugo-romero-mm)
 
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=hugoromerorico&layout=compact&theme=radical)](https://github.com/hugoromerorico)
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=hugo-romero-mm&layout=compact&theme=radical)](https://github.com/hugo-romero-mm)
