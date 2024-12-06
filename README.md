@@ -10,6 +10,7 @@
 - 🌐 Experimenting/developing cutting-edge LLM frameworks.
 - 🎯 Fine-tuning and optimizing various AI models.
 - 🔍 Investigating emerging trends in AI research.
+- Cheating and not following rules on Advent of Code
 
 ### 📈 GitHub Stats
 
