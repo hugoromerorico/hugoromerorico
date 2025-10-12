@@ -1,4 +1,11 @@
-# [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Roboto&weight=700&size=26&pause=1000&color=000000&background=FFFFFF&center=true&repeat=false&width=435&lines=%F0%9F%91%8B+Hi+there;I'm+Hugo+Romero)](https://git.io/typing-svg)
+# [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Roboto&weight=700&size=26&pause=1000&color=000000&background=FFFFFF&center=true&vCenter=true&repeat=false&width=1000&height=100&multiline=true&lines=%F0%9F%91%8B+Hi+there%2C;I'm+Hugo+Romero)](https://git.io/typing-svg)
+
+<!-- I help organizations implement production-ready AI solutions that drive measurable business value.
+I help companies transform complex AI challenges into scalable, production-grade solutions.
+I help businesses deploy AI solutions that generate real impact without the typical complexity and overhead of traditional ML systems.
+I help companies leverage cutting-edge AI technologies to automate operations without sacrificing governance or scalability.
+I'm passionate about critical thinking and exploring SOTA technologies to build well-founded GenAI solutions that create real business value. -->
+I'm passionate about bridging **technical innovation** and **business strategy** to deliver AI solutions that truly matter.
 
 ### 🛠️ Specializations:
 🤖 I'm an **Artificial Intelligence Engineer**.
@@ -6,21 +13,35 @@
 - **MLOps:** Developing and optimizing MLOps pipelines for efficient AI deployment.
 - **AI Solutions:** Productivizing innovative AI solutions to solve real-world high-scale problems.
 
-### 🌱 In My Spare Time:
 - 🌐 Experimenting/developing cutting-edge LLM frameworks.
 - 🎯 Fine-tuning and optimizing various AI models.
 - 🔍 Investigating emerging trends in AI research.
 
-### 📈 GitHub Stats
+<h3 align="center">GitHub Stats</h3>
 
-#### **This account stats & Main account stats**
+<div align="center">
+
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=hugoromerorico&layout=compact&theme=radical)](https://github.com/hugoromerorico)
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=hugo-romero-mm&layout=compact&theme=radical)](https://github.com/hugo-romero-mm)
 
-### 🔗 Connect with Me:
-- 🐙 **[GitHub: hugo-romero-mm](https://github.com/hugo-romero-mm)**
-- 🌐 **[Portfolio](https://hugoromerorico.github.io/)** – Discover my projects, AI experiments, and more!
-- 🔗 **[LinkedIn](https://www.linkedin.com/in/hugo-romero-rico/)**
+</div>
+
+<h3 align="center">Connect</h3>
+<div align="center">
+    <a href="https://www.linkedin.com/in/hugo-romero-rico/">
+        <img src="https://skillicons.dev/icons?i=linkedin" />
+    </a>
+    <a href="https://www.hugoromerorico.github.io/">
+        <img src="https://skillicons.dev/icons?i=htmx" />
+    </a>
+    <a href="https://www.github.com/hugoromerorico/">
+        <img src="https://skillicons.dev/icons?i=github" />
+    </a>
+    <a href="mailto:romerorico.hugo@gmail.com">
+        <img src="https://skillicons.dev/icons?i=gmail" />
+    </a>
+</div>
+
 
 ---
 
