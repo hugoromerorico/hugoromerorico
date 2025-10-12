@@ -1,4 +1,4 @@
-# 👋 Hi there, I'm Hugo Romero
+# [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Roboto&weight=700&size=26&pause=1000&color=000000&background=FFFFFF&center=true&repeat=false&width=435&lines=%F0%9F%91%8B+Hi+there;I'm+Hugo+Romero)](https://git.io/typing-svg)
 
 ### 🛠️ Specializations:
 🤖 I'm an **Artificial Intelligence Engineer**.
