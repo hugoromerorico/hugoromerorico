@@ -1,28 +1,32 @@
 # [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Roboto&weight=700&size=26&pause=1000&color=000000&background=FFFFFF&center=true&vCenter=true&repeat=false&width=1000&height=100&multiline=true&lines=Hi+there%2C;I'm+Hugo+Romero)](https://git.io/typing-svg)
 
 
+**AI Engineer** with a **Computer Science + Business Administration** background, bridging technical innovation and business strategy to deliver production-ready solutions that **actually ship**.
 
-**AI Engineer** bridging technical innovation and business strategy to deliver production-ready solutions that actually ship.
+I'm passionate about translating complex **AI** challenges into scalable, **production-grade systems** that drive measurable value. 
 
-I'm passionate about translating complex AI challenges into scalable, production-grade systems. I combine critical thinking with hands-on execution—building agentic workflows, MLOps pipelines and full-stack AI applications that solve real problems at scale.
+I combine **critical thinking** with hands-on execution, building agentic workflows, MLOps pipelines, and full-stack AI applications that solve **high-impact problems** at scale.
 
 <h2 align="center">What I Do</h2>
 
-**Production AI Engineering**
-- Build and deploy agentic automation flows with MCP servers
-- Design MLOps pipelines for training, validation, deployment, and monitoring
-- Create full-stack AI applications with scalable API architectures
-- Implement LLMOps governance: prompt versioning, budget controls, RBAC
+**Business-Aligned AI Engineering**
+- Translate business requirements into architectures that deliver measurable value
+- Balance innovation with pragmatism—choosing the right tool for value creation, not hype
+- Cut through AI buzzwords to what actually works in production
 
-**Infrastructure & Automation**
-- Terraform modules for cloud-native AI infrastructure on GCP
-- CI/CD pipelines for AI systems with GitHub Actions
-- Kubernetes orchestration for ML workloads
+**Production AI Systems**
+- Agentic automation flows with MCP servers that reduce operational overhead
+- MLOps pipelines: training, validation, deployment, monitoring at scale
+- Full-stack AI applications with scalable API architectures
+- LLMOps governance: prompt versioning, budget controls, RBAC
 
-**Experimentation & Research**
-- Cutting-edge LLM frameworks and multi-agent systems
-- Fine-tuning and optimization strategies
-- Emerging AI patterns and architectural practices
+**Infrastructure & DevOps**
+- Cloud-native AI infrastructure (Terraform, GCP, Kubernetes)
+- CI/CD pipelines for AI systems (GitHub Actions)
+
+**Experimentation**
+- Evaluate SOTA frameworks (LangGraph, multi-agent) for production viability
+- Balance performance with cost—no trend-chasing
 
 <div align="center">
 
