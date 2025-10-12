@@ -1,73 +1,220 @@
-# Stricuring AI agent projects for production with langgraph
+---
+title: "Structuring AI Agent Projects for Production with LangGraph"
+subtitle: "A battle-tested layout that scales from prototype to production without the mess"
+tags: [ai, langgraph, python, devops, agents]
+cover: "./assets/cookiecutter-x-langgraph.png"
+updated: "2025-10-12"
+---
 
-The internet is full of agent project demos, with everything in notebooks, without structure nor good practices.
-By developing and reviewing lots of python projects and lots of agent development projects, I have developed a nice layout for structuring agentic projects, one where I don't feel short generally for adding new features, since everything is well organized and no nonsense is added, avoiding a simple main file with a tool file that imports everything.
+# Structuring AI Agent Projects for Production with LangGraph
 
-This layout mixes practices from clean architecture, SOLID principles and official documentation from the frameworks used, and creates a nice maintinable way of bootastraping and scaling agent projects. Also allows to have easy developing tools, like a self hosted langsmith ui for devloping the agents or runnign fastapi in dev mode.
+The internet is drowning in AI agent demos: Jupyter notebooks with 500-line cells, a single `main.py` importing from `tools.py`, zero structure, zero production readiness. I've built and reviewed enough agent projects to know this doesn't scale past your first feature request.
 
+After dozens of projects, I've landed on a layout that actually works—one that borrows from clean architecture, respects SOLID principles, and doesn't make you hate yourself when you need to add authentication or swap out an LLM provider. This is that structure, with a free Cookiecutter template to get you started in under a minute.
 
+## Why Most Agent Projects Fall Apart
 
-### Meet our heroes (or tech stack)
-Alt: image of the logos of the tech stack
+Three things kill agent projects early:
 
-From outside to inside:
-Docker: For having a standardized way to run the project in any environment.
-Uv: As package manager, uv is becoming more and more popular, way faster, safer and less prone to errors than pip.
-FastAPI: As framework for developing the API.
-Pydantic: As data validation.
-Langgraph: As framework for developing agentic workflows.
+1. **Everything in one file** – Your graph definition, tools, API routes, and config all mashed together. Good luck debugging that at 2 AM.
+2. **No development workflow** – You're editing code, rebuilding containers, and manually testing in production. Slow, brittle, painful.
+3. **No separation of concerns** – Business logic, infrastructure, and presentation layers tangled up. Want to switch from OpenAI to Anthropic? Time to grep through 15 files.
 
-### The goal
-The goal is to create a production-ready agent project with a good structure and good practices.
+If you've shipped agent code to production, you've felt this pain. Let's fix it.
 
-### The structure
-Alt: short video of the structure with some clicks to show internal files.
+## The Tech Stack
 
-At the root level we see 3 folders. App is the main entry point of the applpication, basically here goes all the code that will be shipped to the world.
-Notebooks is a very handy fodler for developing purposes. All projects have an early stage of interacting in an exploratory way with the context surrounding it, connnecting to apis, analyzing data, this is tipically done in a notebook and very few times saved. I have come to realisation that loosing this exploratory phase generally makes us duplicate the work, when new features arrive or someone has to explore the project, keeping it reposited has become handy many times, and kudos to @Miguel Otero from who I grab this idea of keeping it along with the main application.
-
-static will just contain static files, like images or inphographic materials in general for the documentation of the project, again, this is not shipped.
-
-.env will contain the environment variables for development phase of the project, it is very important not to commit this file to the repository since it typucally contains sensitive information like api keys, passwords, etc.
-.env.example is used to copy the structure of the .env file, it is a good practice to have it to avoid mistakes when creating the .env file, just a hint for how the file should look like.
-.gitignore is used to avoid committing sensitive information to the repository, for example we wont be commiting cache files generated automatically by the frameworks, like __pycache__ or .DS_Store files or langgraph's development checkpoint files.
-.python-version is used to specify the python version for the project, it is a good practice to have it to avoid mistakes when creating the virtual environment.
-CHANGELOG.md is optional, specially usefull in larger projects where we want to keep track and show how the features are added to the project with each release.
-Dockerfile is used to build the docker image for the project, for now we keep it very simple with some layer caching optimizations, maybe in other post we can deep dive into creating a more complex Dockerfile that makes use of multi stage builds and other optimizations to ship as light as possible.
-langgraph.json is used to by the development mode of langgraph, it tell where should it look for the graphs to show in the ui, and their possible dependencies.
-Makefile is one of my favorite tools in any project, in my opinion it is even better than a readme file for understanding what a project can do, it shows how to run the project and what are the typical available necessary commands, for example running the project in dev mode, running the tests, running langgraph's dev mode, building or starting the container, a well streamlined organized Makefile is the best way to understand what a project can do and how to do it.
-pyproject.toml is the configuration file generated by uv.
-README.md contains the documentation of the project.
-uv.lock is the lock file generated by uv, it contains the exact version of the dependencies for the project, is generated automatically by uv and is used to install the dependencies in the production environment.
-<!-- There must be a better way to organize this explanation, by grouping by purpose for example-->
-
-### The app folder
+Here's what we're working with, from the outside in:
 
 
+<img src="./assets/docker.svg" alt="Docker" width="20" /> **Docker** – Standardized runtime, reproducible across dev/staging/prod
 
-## Gift!
+<img src="./assets/uv.svg" alt="uv" width="20" /> **uv** – Modern Python package manager; faster and more reliable than pip
 
-I found out I loose a lot of time in just setting up all the starting point layout for projects so I created a cookicutter to help me bootstrap new projects with the same layout and structure in a way faster way, I decided to make this public.
+<img src="./assets/fastapi.svg" alt="FastAPI" width="20" /> **FastAPI** – API framework with async support and automatic docs
 
-What is cookicutter? Cookicutter is a tool that allows you to create a new project from a template, it is a very popular tool in the python community, and it is very easy to use, it is a tool that allows you to create a new project from a template, it is a very popular tool in the python community, and it is very easy to use, it is a tool that allows you to create a new project from a template, it is a very popular tool in the python community, and it is very easy to use. Just follow the instalation guide and you will be able to create a new project with the same layout and structure in a way faster way.
+<img src="./assets/pydantic.svg" alt="Pydantic" width="20" /> **Pydantic** – Data validation that actually catches bugs before runtime
 
-I will leave the link to the cookicutter repository here: https://github.com/hugoromerorico/production-agent-cookiecutter-langgraph
-And the command to create a new project with the same layout and structure in a way faster way:
+<img src="./assets/langgraph.svg" alt="LangGraph" width="20" /> **LangGraph** – Agent workflow orchestration with built-in dev tools
 
-```sh
+
+## The Project Structure
+
+Here's the full layout. I'll break down each piece below.
+
+```
+project-root/
+├── app/                    # Everything that ships
+│   ├── application/        # Use cases & workflows
+│   ├── config/            # Settings & environment
+│   ├── domain/            # Business logic
+│   ├── infrastructure/    # External services (LLMs, DBs)
+│   ├── routes/            # FastAPI endpoints
+│   └── main.py            # Application entry point
+├── notebooks/             # Exploratory work (kept, not shipped)
+├── static/                # Docs, images, diagrams
+├── .env                   # Local secrets (never commit)
+├── .env.example           # Template for required vars
+├── .gitignore
+├── .python-version
+├── CHANGELOG.md
+├── Dockerfile
+├── langgraph.json         # LangGraph dev UI config
+├── Makefile               # Underrated undercover documentation
+├── pyproject.toml
+├── README.md
+└── uv.lock
+```
+
+### The `app/` directory (What Ships)
+
+This is your production code. Clean separation:
+
+- **`application/`** – Use cases and LangGraph workflows. Each workflow is self-contained: graph definition, nodes, edges. Basically here goes the business logic, the way to solve the use case.
+- **`domain/`** – Core business entities and services. No framework dependencies, pure Python.
+- **`infrastructure/`** – Adapters for external systems: LLM clients, databases, APIs. Swap implementations without touching business logic.
+- **`routes/`** – FastAPI endpoints. Thin layer that calls use cases.
+- **`config/`** – Environment variables, feature flags, settings. Single source of truth. For this I love working with pydantic-settings library.
+
+**Why this works:** When you need to add a new agent, you drop a workflow in `application/`, wire it up in `routes/`, done. No hunting through tangled imports.
+
+### The `notebooks/` directory (Keep Your Explorations)
+
+Every project starts messy—connecting to APIs, exploring data, testing prompts. Most people trash these notebooks once they "productionize." Don't.
+
+Save them in `notebooks/`. When you need to add a feature six months later, or when a new dev joins, these explorations save hours. Credit to [@Miguel Otero](https://www.linkedin.com/in/miguel-otero-perez/) for drilling this into my head.
+
+### Configuration Files (The Boring Stuff That Matters)
+
+- **`.env` / `.env.example`** – Real secrets go in `.env` (gitignored). `.env.example` shows the shape without leaking keys.
+- **`.python-version`** – Locks Python version. uv and pyenv read this automatically.
+- **`Dockerfile`** – Simple multi-layer build. Layer caching makes rebuilds fast. (Multi-stage builds are overkill unless you're optimizing image size for CI.)
+- **`langgraph.json`** – Tells LangGraph's dev UI where to find your graphs. Run `make dev` and get a local LangSmith-like interface.
+- **`Makefile`** – Better than a README. Every command you run is here: `make dev`, `make test`, `make docker-build`. New devs run `make` and see what's possible.
+
+**Pitfall:** Don't skip `.env.example`. Six months from now, you'll forget which vars are required, and so will your teammates.
+
+## The `app/` Internals (Clean Architecture, Lite)
+
+Let's zoom into `app/application/workflows/`. Here's a sample agent:
+
+```python
+# app/application/workflows/chat/graph.py
+from langgraph.graph import StateGraph, END
+from app.domain.entities import ChatState
+from app.infrastructure.llm_service import LLMService
+
+def build_chat_graph(llm_service: LLMService):
+    graph = StateGraph(ChatState)
+    
+    graph.add_node("agent", lambda state: llm_service.generate(state))
+    graph.add_edge("agent", END)
+    
+    return graph.compile()
+```
+
+The workflow knows nothing about OpenAI or Anthropic. `LLMService` is an abstraction in `infrastructure/`. Swap providers by changing one class.
+
+In `routes/`:
+
+```python
+# app/routes/v1/chat.py
+from fastapi import APIRouter
+from app.application.chat import ChatUseCase
+
+router = APIRouter()
+
+@router.post("/chat")
+async def chat(request: ChatRequest):
+    use_case = ChatUseCase()
+    return await use_case.execute(request)
+```
+
+Thin routes. Use cases contain logic. Easy to test, easy to trace.
+
+## Development Workflow
+
+The Makefile drives everything. Here's mine:
+
+```makefile
+.PHONY: dev test docker-build docker-run langgraph-dev
+
+dev:
+	uv run fastapi dev app/main.py
+
+langgraph-dev:
+	uv run langgraph dev
+
+docker-build:
+	docker build -t agent-app .
+
+docker-run:
+	docker run -p 8000:8000 --env-file .env agent-app
+```
+### Agents development
+
+Run `make langgraph-dev` and you get a visual graph UI at `https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024`. Test nodes, inspect state, replay executions. It's like LangSmith but self-hosted and free.
+
+<img src="./assets/langgraph-studio.png" alt="LangGraph dev UI" width="400" />
+
+### Logging
+
+Logging in python is a whole world by itself, to avoid headaches and complex logging setups, I recommend using [loguru](https://loguru.readthedocs.io/en/stable/) library. It's simple, easy to use and it's a single dependency. The project already has it configured.
+
+## Common Pitfalls
+
+1. **Mixing business logic and infrastructure** – Keep `domain/` pure. No imports from `infrastructure/`. Use dependency injection.
+2. **Skipping the Makefile** – "I'll remember the commands" – No you won't. Write it down.
+3. **Committing `.env`** – Add it to `.gitignore` immediately. Leaked keys are a nightmare.
+4. **Ignoring notebooks/** – Archive your explorations. Future you will thank you.
+5. **Over-engineering early** – Start simple. You don't need multi-stage Docker builds or a service mesh on day one.
+
+## The Cookiecutter Template
+
+<img src="./assets/cookiecutter-x-langgraph.png" alt="Template: Cookiecutter + LangGraph" width="200" />
+
+I got tired of copying this structure manually, so I built a [Cookiecutter template](https://github.com/hugoromerorico/production-agent-cookiecutter-langgraph). It generates the entire layout with one command:
+
+```bash
 cookiecutter https://github.com/hugoromerorico/production-agent-cookiecutter-langgraph
 ```
 
-I have kept to a minimal the questions asked at the start, making some opinionated decisions of how they are used, so there is no pain at all in using the tool by not knowing what each thing will be used for.
+Answer a few questions (project name, author, Python version) and you're done. No decision fatigue, no bikeshedding about folder names.
 
-## Conclusion
+The template includes:
+- Pre-configured `Makefile` with common commands
+- Sample chat and generic agent workflows
+- Docker setup with layer caching
+- FastAPI boilerplate with versioned routes
+- LangGraph dev UI config
 
-I hope you enjoyed this article, if you have any questions or suggestions, please feel free to contact me.
+Clone it, run `make dev`, and you're coding in under a minute.
 
-If you want to know more about the tech stack used, you can check the following links:
+## Results
 
-- [Docker](https://www.docker.com/)
-- [Uv](https://docs.astral.sh/uv/)
+Here's what you get with this structure:
+
+- **Fast iteration** – `make langgraph-dev` for visual debugging, `make dev` for API hot-reload
+- **Easy onboarding** – New devs run `make`, read the `Makefile`, and understand the project
+- **Low coupling** – Swap LLM providers, databases, or even frameworks without rewriting business logic
+- **Production-ready** – Docker images, environment management, and clear separation of concerns from day one
+
+I've used this on projects ranging from weekend hacks to client production systems. It scales.
+
+## Takeaways
+
+- Structure agent projects like real software: separate concerns, inject dependencies, keep business logic clean
+- Save your notebooks—they're documentation of your decision-making process
+- A good Makefile is better than a README for understanding what a project does
+- Use LangGraph's dev UI for debugging; it's a game-changer
+- Don't reinvent the wheel—use the Cookiecutter template and get building
+
+---
+
+**Links:**
+- [Cookiecutter template](https://github.com/hugoromerorico/production-agent-cookiecutter-langgraph)
+- [Docker docs](https://www.docker.com/)
+- [uv package manager](https://docs.astral.sh/uv/)
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Pydantic](https://docs.pydantic.dev/)
-- [Langgraph](https://langchain-ai.github.io/langgraph/)
+- [LangGraph](https://langchain-ai.github.io/langgraph/)
