@@ -60,7 +60,7 @@ I combine **critical thinking** with hands-on execution, building agentic workfl
     <a href="https://www.linkedin.com/in/hugo-romero-rico/">
         <img src="https://skillicons.dev/icons?i=linkedin" />
     </a>
-    <a href="https://www.hugoromerorico.github.io/">
+    <a href="https://hugoromerorico.github.io/">
         <img src="https://skillicons.dev/icons?i=htmx" />
     </a>
     <a href="https://www.github.com/hugoromerorico/">
