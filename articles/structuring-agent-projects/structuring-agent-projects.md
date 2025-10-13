@@ -94,9 +94,72 @@ Save them in `notebooks/`. When you need to add a feature six months later, or w
 
 **Pitfall:** Don't skip `.env.example`. Six months from now, you'll forget which vars are required, and so will your teammates.
 
-## The `app/` Internals (Clean Architecture, Lite)
+## Design Principles
 
-Let's zoom into `app/application/workflows/`. Here's a sample agent:
+This structure follows a few key principles:
+
+1. **Dependency Direction** – Business logic (`domain/`) doesn't know about infrastructure. Dependencies point inward, not outward.
+2. **Separation of Concerns** – Each directory has one job. Workflows orchestrate, infrastructure connects, routes expose APIs.
+3. **Easy Testing** – Pure business logic in `domain/`, injected dependencies in `application/`, thin routes. Mock the edges, test the core.
+4. **Developer Experience** – Clear structure means new team members know where things go. No hunting through tangled imports.
+
+**Key Architecture Rule:** `domain/` is pure Python—no framework dependencies, no external service calls. Everything else adapts to serve the domain.
+
+## Common Pitfalls to Avoid
+
+1. **Mixing business logic and infrastructure** – Keep `domain/` pure. No imports from `infrastructure/`. Use dependency injection.
+2. **Ignoring notebooks/** – Archive your explorations. Future you will thank you.
+3. **Over-engineering early** – Start simple. Add complexity only when needed.
+4. **Skipping documentation** – Document your commands, environment variables, and design decisions as you go.
+5. **Skipping the Makefile** – "I'll remember the commands" – No you won't. Write it down.
+
+## The Cookiecutter Template
+
+<img src="./assets/cookiecutter-x-langgraph.png" alt="Template: Cookiecutter + LangGraph" width="200" />
+
+Rather than manually recreating this structure for each project, I built a [Cookiecutter template](https://github.com/hugoromerorico/production-agent-cookiecutter-langgraph) that generates everything in one command:
+
+```bash
+cookiecutter https://github.com/hugoromerorico/production-agent-cookiecutter-langgraph
+```
+
+Answer a few questions (project name, author, Python version) and you get a fully configured project with the structure above.
+
+The template includes everything you need to start building immediately:
+- Complete folder structure following the layout described above
+- Pre-configured development tooling (Docker, Makefile, etc.)
+- FastAPI boilerplate with versioned routes
+- Two example LangGraph workflows to learn from and build upon
+- Environment management and configuration setup
+
+**Important:** The included workflows are intentionally simple examples—a basic chat agent and a generic multi-node workflow. They're not production-ready solutions, but rather starting points that demonstrate LangGraph patterns and the architecture in action. Use them as templates to understand the structure, then replace them with your actual use cases.
+
+## What You Actually Get
+
+Let's look at what comes out of the box and how to use it.
+
+### Example Workflows
+
+The template includes two sample LangGraph workflows that demonstrate different patterns:
+
+**Chat Agent** – A simple conversational agent with a single node:
+
+<img src="./assets/wf-chat-agent.png" alt="Chat workflow diagram" width="300" />
+
+This minimal workflow shows the basics: state management, LLM integration, and clean separation from infrastructure. Perfect for understanding the fundamentals before adding complexity.
+
+**Generic Agent** – A multi-node workflow with parallel execution and conditional routing:
+
+<img src="./assets/wf-generic-agent.png" alt="Generic agent workflow diagram" width="300" />
+
+This more complex example demonstrates parallel node execution, state aggregation, and conditional branching. Use it as a template for building sophisticated multi-step agents.
+
+Both workflows live in `app/application/workflows/` and follow the same pattern:
+- **`graph.py`** – Defines the LangGraph structure (nodes, edges, state)
+- **`nodes.py`** – Contains node functions with business logic
+- **`state.py`** – Pydantic models for typed state management
+
+Here's how a workflow is structured:
 
 ```python
 # app/application/workflows/chat/graph.py
@@ -113,9 +176,9 @@ def build_chat_graph(llm_service: LLMService):
     return graph.compile()
 ```
 
-The workflow knows nothing about OpenAI or Anthropic. `LLMService` is an abstraction in `infrastructure/`. Swap providers by changing one class.
+Notice: The workflow knows nothing about which LLM provider you're using. `LLMService` is an abstraction that lives in `infrastructure/`, making it trivial to swap from OpenAI to Anthropic or any other provider.
 
-In `routes/`:
+Routes are equally clean:
 
 ```python
 # app/routes/v1/chat.py
@@ -130,11 +193,11 @@ async def chat(request: ChatRequest):
     return await use_case.execute(request)
 ```
 
-Thin routes. Use cases contain logic. Easy to test, easy to trace.
+Thin routes that delegate to use cases. Easy to test, easy to trace through the stack.
 
-## Development Workflow
+### The Makefile (Your Command Center)
 
-The Makefile drives everything. Here's mine:
+Every command you'll run is documented in the Makefile:
 
 ```makefile
 .PHONY: dev test docker-build docker-run langgraph-dev
@@ -151,63 +214,57 @@ docker-build:
 docker-run:
 	docker run -p 8000:8000 --env-file .env agent-app
 ```
-### Agents development
 
-Run `make langgraph-dev` and you get a visual graph UI at `https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024`. Test nodes, inspect state, replay executions. It's like LangSmith but self-hosted and free.
+Run `make` with no arguments and you'll see all available commands. New developers don't need to read documentation—they just run `make` and understand what's possible.
+
+**Pro tip:** The Makefile is better documentation than a README. Commands are self-documenting and guaranteed to be up-to-date (because they're what you actually run).
+
+### LangGraph Development UI
+
+Run `make langgraph-dev` and you get a visual interface at `https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024`:
 
 <img src="./assets/langgraph-studio.png" alt="LangGraph dev UI" width="400" />
 
-### Logging
+This interface lets you:
+- Visualize your graph structure in real-time
+- Test individual nodes with custom inputs
+- Inspect state at each step
+- Replay and debug executions
+- Iterate without restarting your server
 
-Logging in python is a whole world by itself, to avoid headaches and complex logging setups, I recommend using [loguru](https://loguru.readthedocs.io/en/stable/) library. It's simple, easy to use and it's a single dependency. The project already has it configured.
+It's like having LangSmith locally and free. Essential for development.
 
-## Common Pitfalls
+### Logging with Loguru
 
-1. **Mixing business logic and infrastructure** – Keep `domain/` pure. No imports from `infrastructure/`. Use dependency injection.
-2. **Skipping the Makefile** – "I'll remember the commands" – No you won't. Write it down.
-3. **Committing `.env`** – Add it to `.gitignore` immediately. Leaked keys are a nightmare.
-4. **Ignoring notebooks/** – Archive your explorations. Future you will thank you.
-5. **Over-engineering early** – Start simple. You don't need multi-stage Docker builds or a service mesh on day one.
+The template comes with [loguru](https://loguru.readthedocs.io/en/stable/) pre-configured. Python's built-in logging is powerful but overcomplicated for most projects. Loguru gives you:
 
-## The Cookiecutter Template
+```python
+from loguru import logger
 
-<img src="./assets/cookiecutter-x-langgraph.png" alt="Template: Cookiecutter + LangGraph" width="200" />
-
-I got tired of copying this structure manually, so I built a [Cookiecutter template](https://github.com/hugoromerorico/production-agent-cookiecutter-langgraph). It generates the entire layout with one command:
-
-```bash
-cookiecutter https://github.com/hugoromerorico/production-agent-cookiecutter-langgraph
+logger.info("Simple logging that just works")
+logger.error("Automatic exception capture with context")
 ```
 
-Answer a few questions (project name, author, Python version) and you're done. No decision fatigue, no bikeshedding about folder names.
+One dependency, zero configuration headaches, excellent defaults. The project has it wired up and ready to use.
 
-The template includes:
-- Pre-configured `Makefile` with common commands
-- Sample chat and generic agent workflows
-- Docker setup with layer caching
-- FastAPI boilerplate with versioned routes
-- LangGraph dev UI config
+## Why This Works
 
-Clone it, run `make dev`, and you're coding in under a minute.
+This structure delivers real benefits across the development lifecycle:
 
-## Results
+- **Fast iteration** – Visual debugging with LangGraph UI, hot-reload with FastAPI, no waiting on Docker rebuilds during development
+- **Easy onboarding** – New developers run `make` and immediately understand available commands. The structure is self-documenting.
+- **Low coupling** – Swap LLM providers, databases, or frameworks without touching business logic. Dependencies point inward.
+- **Production-ready from day one** – Docker images, environment management, and separation of concerns built in. No "later we'll refactor for production."
 
-Here's what you get with this structure:
-
-- **Fast iteration** – `make langgraph-dev` for visual debugging, `make dev` for API hot-reload
-- **Easy onboarding** – New devs run `make`, read the `Makefile`, and understand the project
-- **Low coupling** – Swap LLM providers, databases, or even frameworks without rewriting business logic
-- **Production-ready** – Docker images, environment management, and clear separation of concerns from day one
-
-I've used this on projects ranging from weekend hacks to client production systems. It scales.
+I've used this structure on projects ranging from weekend prototypes to client production systems serving real users. It scales both up (adding features) and down (starting simple).
 
 ## Takeaways
 
-- Structure agent projects like real software: separate concerns, inject dependencies, keep business logic clean
-- Save your notebooks—they're documentation of your decision-making process
-- A good Makefile is better than a README for understanding what a project does
-- Use LangGraph's dev UI for debugging; it's a game-changer
-- Don't reinvent the wheel—use the Cookiecutter template and get building
+- **Structure matters** – Agent projects are software. Apply the same principles you'd use for any production system: separate concerns, inject dependencies, keep core logic pure.
+- **Save your notebooks** – They're living documentation of your exploration and decision-making. Future you will need them.
+- **Example code is for learning** – The cookiecutter workflows are intentionally simple. Study them, understand the patterns, then replace them with your actual use cases.
+- **Tooling accelerates development** – LangGraph's visual UI is a game-changer for debugging. Use it.
+- **Start building, don't bikeshed** – Use the Cookiecutter template and get to the actual problem. The structure is solved.
 
 ---
 
