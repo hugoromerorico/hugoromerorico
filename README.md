@@ -72,6 +72,11 @@ I combine **critical thinking** with hands-on execution, building agentic workfl
 </div>
 
 ---
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=hugoromerorico&style=flat-square&color=blue" alt="Profile views counter"/>
+</div>
+
+---
 
 ✍️ *"I'm not superstitious, just a little stitious"* – Michael Scott
 
