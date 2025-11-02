@@ -10,14 +10,14 @@ updated: "2025-11-02"
 # ¿Me quitará la IA el trabajo? La Paradoja de Jevons
 
 ## TL;DR
-- La mejora de eficiencia de las personas por el uso de la IA puede aumentar la demanda de trabajadores.
-- Esa conclusión se extrae de la aplicación de La Paradoja de Jevons al contexto del impacto de la IA en el mundo lavboral.
+- La mejora de eficiencia de las personas mediante el uso de la IA puede aumentar la demanda de trabajadores.
+- Esa conclusión se extrae de la aplicación de La Paradoja de Jevons al contexto del impacto de la IA en el mundo laboral.
 - Hay ciertas asunciones que se hacen para aplicar la Paradoja de Jevons, que podrían ser o no ser reales.
 - Incluso en un escenario positivista, los costes de transición son reales, y las personas que no sean capaces de adaptarse pueden verse afectadas negativamente.
 
 ---
 
-> Muchas de las veces que cuento que soy ingeniero de inteligenci a artificial, la conversación deriva en las preguntas filosóficas y de impacto social que que vienen de la mano con el auge repentino de esta tecnología.
+> Muchas de las veces que cuento que soy ingeniero de inteligencia artificial, la conversación deriva en las preguntas filosóficas y de impacto social que que vienen de la mano con el auge repentino de esta tecnología.
 
 La más frecuente, sin duda, la preocupación sobre la persistencia de los trabajos actuales, y cómo se puede gestionar una potencial pérdida de las profesiones actuales.
 
@@ -37,7 +37,7 @@ El tiempo dió la razón a Jevons, confirmando su teoría. ¿Por qué? La eficie
 
 Este inteligente análisis se ha generalizado y dado forma, para conformar lo que conocemos como la Paradoja de Jevons:
 
-> "la introducción de tecnologías con mayor eficiencia energética puede, aumentar el consumo total de energía y, simultáneamente, llevar a un incremento de las emisiones.
+> "la introducción de tecnologías con mayor eficiencia energética puede, aumentar el consumo total de energía y, simultáneamente, llevar a un incremento de las emisiones."
 
 **Esquemáticamente**:
 <img src="./assets/jevons.gif" alt="Esquema de la Paradoja de Jevons" />
@@ -49,10 +49,10 @@ En 1967 se instaló en Londres el primer cajero automático en del mundo. Las pr
 El patrón se mantuvo. La automatización abarató las sucursales. Sucursales más baratas significaron más sucursales. Más sucursales significaron más empleos.
 
 Otros ejemplos:
-- Mecanismos de ahorro de agua que hacen que descuidemos más el consumo, aumentandolo al final.
+- Mecanismos de ahorro de agua que hacen que descuidemos más el consumo, aumentándolo al final.
 - Las mejoras en las baterías de dispositivos han proliferado su uso, haciendo que el consumo de energía aumente.
-- Incluso un ejemplo reciente, y que ya nos mete de lleno en ka inteligencia artificial, el abaratamiento y mejora de eficiencia de los centros de datos, que simplemente han hecho que se creen centros mucho más masivos, aumentando el consumo de GPUs asociadas.
-- El anuncio de DeepSeek R1 también fue un buen ejemplo en este campo, la empresa China hizo públicas nuevas técnicas mucho más eficientes de entrenar modelos de lenguaje, el mercado sobrerreaccionó, haciendo que el precio de las acciones de Nvidia se desplomase. Lejos de ver una disminución del uso de las GPUs de Nvidia, el mercado se abrió a nuevos competidores, en el largo plazo hemos visto como el Stock de Nvidia siguie sumiendo y sus numeros en venta de GPUs siguen en alza.
+- Incluso un ejemplo reciente, y que ya nos mete de lleno en la inteligencia artificial, el abaratamiento y mejora de eficiencia de los centros de datos, que simplemente han hecho que se creen centros mucho más masivos, aumentando el consumo de GPUs asociadas.
+- El anuncio de DeepSeek R1 también fue un buen ejemplo en este campo, la empresa China hizo públicas nuevas técnicas mucho más eficientes de entrenar modelos de lenguaje, el mercado sobrerreaccionó, haciendo que el precio de las acciones de Nvidia se desplomase. Lejos de ver una disminución del uso de las GPUs de Nvidia, el mercado se abrió a nuevos competidores, en el largo plazo hemos visto como el Stock de Nvidia sigue subiendo y sus números en venta de GPUs siguen en alza.
 
 ---
 
@@ -83,7 +83,9 @@ La Paradoja de Jevons requiere ganancias de eficiencia (humanos + IA), no sustit
 
 ### El coste de transición es real
 
-Incluso si la demanda a largo plazo aumenta, la disrupción a corto plazo sucede. Las habilidades que importan cambian. Los trabajadores que no se adaptan enfrentan fricción. Aquellos que adoptan herramientas de IA y cambian el enfoque hacia problemas de nivel superior prosperan. La transición no es suave ni indolora, pero la tendencia a largo plazo favorece el aumento de demanda. En boca del CEO de Nvidia, Jensen Huang:
+Incluso si la demanda a largo plazo aumenta, la disrupción a corto plazo sucede. Las habilidades que importan cambian. Los trabajadores que no se adaptan enfrentan fricción. Aquellos que adoptan herramientas de IA y cambian el enfoque hacia problemas de nivel superior prosperan. La transición no es suave ni indolora, pero la tendencia a largo plazo favorece el aumento de demanda. 
+
+En boca del CEO de Nvidia, Jensen Huang:
 > "La IA no te va a quitar el trabajo, lo hará una persona que utilice la IA"
 
 
