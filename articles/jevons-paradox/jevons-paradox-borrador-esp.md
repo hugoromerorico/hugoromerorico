@@ -52,8 +52,7 @@ Otros ejemplos:
 - Mecanismos de ahorro de agua que hacen que descuidemos más el consumo, aumentandolo al final.
 - Las mejoras en las baterías de dispositivos han proliferado su uso, haciendo que el consumo de energía aumente.
 - Incluso un ejemplo reciente, y que ya nos mete de lleno en ka inteligencia artificial, el abaratamiento y mejora de eficiencia de los centros de datos, que simplemente han hecho que se creen centros mucho más masivos, aumentando el consumo de GPUs asociadas.
-
-El último ejemplo es particularmente reciente e interesante.
+- El anuncio de DeepSeek R1 también fue un buen ejemplo en este campo, la empresa China hizo públicas nuevas técnicas mucho más eficientes de entrenar modelos de lenguaje, el mercado sobrerreaccionó, haciendo que el precio de las acciones de Nvidia se desplomase. Lejos de ver una disminución del uso de las GPUs de Nvidia, el mercado se abrió a nuevos competidores, en el largo plazo hemos visto como el Stock de Nvidia siguie sumiendo y sus numeros en venta de GPUs siguen en alza.
 
 ---
 
@@ -98,6 +97,7 @@ He mencionado antes que el caso del incremento de data centers es particularment
 Si pensamos en las personas como unidades pensantes, podemos entender la IA como una vía de mejora de las personas, aumentando nuestra eficiencia. Esto pordría significar simplemente que seremos capaces de realizar muchas más tareas, reduciendo especialmente las tareas en las que la IA es buena, pero siempre trabajando como una unidad, es decir, siendo asistidos por ella, no reemplazados.
 
 En este caso, la Paradoja de Jevons podría aplicarse, el data center que son las empresas podría llegar a requerir de más unidades pensantes, y por tanto hacer que el trabajo sea más requerido que nunca.
+
 
 ---
 
