@@ -9,7 +9,14 @@ updated: "2025-11-02"
 
 # ¿Me quitará la IA el trabajo? La Paradoja de Jevons
 
-> Todo el mundo pregunta "¿Me quitará la IA el trabajo?". Un escenario posible es que la IA te haga **más demandado**, no menos.
+## TL;DR
+- La mejora de eficiencia de las personas por el uso de la IA puede aumentar la demanda de trabajadores.
+- Esa conclusión se extrae de la aplicación de La Paradoja de Jevons al contexto del impacto de la IA en el mundo lavboral.
+- Hay ciertas asunciones que se hacen para aplicar la Paradoja de Jevons, que podrían ser o no ser reales.
+- Incluso en un escenario positivista, los costes de transición son reales, y las personas que no sean capaces de adaptarse pueden verse afectadas negativamente.
+
+---
+
 > Muchas de las veces que cuento que soy ingeniero de inteligenci a artificial, la conversación deriva en las preguntas filosóficas y de impacto social que que vienen de la mano con el auge repentino de esta tecnología.
 
 La más frecuente, sin duda, la preocupación sobre la persistencia de los trabajos actuales, y cómo se puede gestionar una potencial pérdida de las profesiones actuales.
@@ -35,7 +42,7 @@ Este inteligente análisis se ha generalizado y dado forma, para conformar lo qu
 **Esquemáticamente**:
 <img src="./assets/jevons.gif" alt="Esquema de la Paradoja de Jevons" />
 
-### Otros ejemplos donde la Paradoja de Jevons se aplica
+### Otros ejemplos donde la Paradoja de Jevons se cumplió
 
 En 1967 se instaló en Londres el primer cajero automático en del mundo. Las predicciones apuntaban a despidos masivos en las sedes bancarias.
 
@@ -46,7 +53,7 @@ Otros ejemplos:
 - Las mejoras en las baterías de dispositivos han proliferado su uso, haciendo que el consumo de energía aumente.
 - Incluso un ejemplo reciente, y que ya nos mete de lleno en ka inteligencia artificial, el abaratamiento y mejora de eficiencia de los centros de datos, que simplemente han hecho que se creen centros mucho más masivos, aumentando el consumo de GPUs asociadas.
 
-El último ejemplo es particularmente interesante.
+El último ejemplo es particularmente reciente e interesante.
 
 ---
 
@@ -57,11 +64,11 @@ Cada empresa tiene un backlog de ideas que no son económicamente viables hoy, y
 Para aplicar la Paradoja de Jevons en este escenario, asumimos que la eficiencia laboral de las personas se verá altamente incrementada por el uso de la IA. Esto potenciará la viabilidad de las ideas. Más ideas viables significan más proyectos. Más proyectos significan más demanda trabajadores, de super-humanos.
 
 ## Brotes verdes
-El ejemplo reciente ha sido 
+El ejemplo reciente se ha visto en el mundo del software, la aplicación de técnicas de despidos masivos de desarrolladores fue hace aproximadamente dos años un eco constante en los medios. La inteligencia artificial ha seguido mejorando, especialmente en el campo de la programación, sin embargo ya no se habla de despidos masivos de desarrolladores, sino de un aumento de la demanda, de empresas que incrementan sus plantillas. Esto podrían ser los primeros indicadores de aplicación de la Paradoja de Jevons en el impacto de la inteligencia artificial.
 
 ---
 
-## ¿Cuándo NO aplica esto?
+## Brotes no tan verdes
 
 Esto no es una ley universal. Hay condiciones claras donde la Paradoja de Jevons se rompe.
 
@@ -73,69 +80,28 @@ Cuando la demanda es fija, la eficiencia simplemente significa menos trabajadore
 
 ### Sustitución Perfecta vs. Eficiencia
 
-La Paradoja de Jevons requiere ganancias de eficiencia (humanos + IA), no sustitución perfecta (solo IA). Si la IA puede hacer tu trabajo 100% sin involucramiento humano, la paradoja no aplica. No eres más eficiente; eres reemplazado.
+La Paradoja de Jevons requiere ganancias de eficiencia (humanos + IA), no sustitución perfecta (solo IA). Si la IA puede hacer tu trabajo 100% sin involucramiento humano, la paradoja seguramente no aplique.
 
-Estado actual para desarrolladores: la IA es aumentación, no sustitución. La IA escribe código, pero los humanos aún definen requisitos, toman decisiones arquitectónicas, revisan salidas, manejan casos extremos, y orquestan sistemas. Eso podría cambiar, pero todavía no estamos ahí.
+### El coste de transición es real
 
-### Cuellos de Botella Alternativos
+Incluso si la demanda a largo plazo aumenta, la disrupción a corto plazo sucede. Las habilidades que importan cambian. Los trabajadores que no se adaptan enfrentan fricción. Aquellos que adoptan herramientas de IA y cambian el enfoque hacia problemas de nivel superior prosperan. La transición no es suave ni indolora, pero la tendencia a largo plazo favorece el aumento de demanda. En boca del CEO de Nvidia, Jensen Huang:
+> "La IA no te va a quitar el trabajo, lo hará una persona que utilice la IA"
 
-¿Qué pasa si la productividad no es la restricción? Si los límites regulatorios, la saturación del mercado o las restricciones de capital son el verdadero cuello de botella, hacer a los desarrolladores más productivos no aumenta la demanda.
-
-No puedes simplemente construir software infinito si no hay mercado para él. Si tu producto está limitado por capacidad de ventas, no por capacidad de desarrollo, desarrolladores más productivos no ayudan.
-
-### Los Costos de Transición son Reales
-
-Incluso si la demanda a largo plazo aumenta, la disrupción a corto plazo sucede. Las habilidades que importan cambian. La programación pura se vuelve menos valiosa. La orquestación, el juicio y la arquitectura se vuelven más valiosos.
-
-Los trabajadores que no se adaptan enfrentan fricción. Aquellos que adoptan herramientas de IA y cambian el enfoque hacia problemas de nivel superior prosperan. La transición no es suave ni indolora, pero la tendencia a largo plazo favorece el aumento de demanda.
 
 ---
 
-## Qué significa esto para trabajadores del conocimiento
 
-El trabajo asistido por IA se está convirtiendo en requisito básico. Como las calculadoras para contadores o los procesadores de texto para escritores. No usar herramientas de IA significa ser menos productivo, lo que significa una desventaja competitiva.
+## Conclusión positiva: ¿Somos un data-center?
 
-### Habilidades que importan más
+He mencionado antes que el caso del incremento de data centers es particularmente relevante. Pienso que en este caso, el mapeo mental es bastante inmediato. Podemos pensar que las CPUs y GPUs son unidades pensantes cuya eficiencia se ha incrementado enormemente, siguiendo la ley de Moore año tras año.
 
-- **Experiencia de dominio**: Entender el espacio del problema profundamente. La IA puede escribir código, pero no puede conocer tu contexto de negocio.
-- **Juicio**: Saber qué construir y por qué. Decidir qué problemas vale la pena resolver.
-- **Orquestación**: Coordinar IA, humanos y sistemas. Diseñar flujos de trabajo que aprovechen cada uno efectivamente.
-- **Comunicación**: Explicar sistemas complejos. Traducir entre necesidades de negocio e implementación técnica.
+Si pensamos en las personas como unidades pensantes, podemos entender la IA como una vía de mejora de las personas, aumentando nuestra eficiencia. Esto pordría significar simplemente que seremos capaces de realizar muchas más tareas, reduciendo especialmente las tareas en las que la IA es buena, pero siempre trabajando como una unidad, es decir, siendo asistidos por ella, no reemplazados.
 
-### Industrias con demanda elástica
-
-La Paradoja de Jevons aplica más fuerte donde la demanda puede expandirse cuando los costos bajan.
-
-**Demanda infinita**: desarrollo de software, escritura, creación de contenido, análisis de datos, diseño, investigación. Estos campos tienen potencial ilimitado para más trabajo. La restricción es el costo y la capacidad, no el tamaño del mercado.
-
-**Demanda finita**: manufactura (restricciones físicas), algunos roles de servicio (limitados por población o uso). Estos campos tienen límites naturales que previenen la expansión de demanda.
-
-El trabajo del conocimiento tiende hacia demanda infinita. Las empresas siempre quieren más análisis, más contenido, más funcionalidades, más herramientas. La IA hace que estos sean más baratos de producir, así que se producen más.
-
-### Ejemplos concretos
-
-- **Ingenieros de software**: Construyen más funcionalidades, crean más herramientas internas, ejecutan más experimentos, mantienen más sistemas.
-- **Escritores**: Producen más formatos de contenido, crean variaciones personalizadas, cubren más temas de nicho, iteran más rápido.
-- **Analistas**: Ejecutan análisis más profundo, prueban más escenarios, producen reportes más rápido, exploran más dimensiones.
-- **Diseñadores**: Crean más variaciones, ejecutan más pruebas A/B, producen experiencias personalizadas, iteran más rápidamente.
+En este caso, la Paradoja de Jevons podría aplicarse, el data center que son las empresas podría llegar a requerir de más unidades pensantes, y por tanto hacer que el trabajo sea más requerido que nunca.
 
 ---
 
-## Conclusiones
 
-- La Paradoja de Jevons sugiere que la IA hace a los trabajadores del conocimiento más valiosos, no obsoletos.
-- La condición: la demanda debe ser elástica (capaz de expandirse cuando los costos bajan).
-- La advertencia: los costos de transición son reales. Las habilidades necesitan evolucionar hacia el juicio y la orquestación.
-- La acción: Adopta las herramientas de IA ahora. Enfócate en problemas de nivel superior que la IA no puede resolver sola.
-- La apuesta a largo plazo: Más ideas se vuelven económicamente viables, lo que significa más trabajo para que los humanos hagan.
-
-La pregunta no es "¿Me quitará la IA el trabajo?" Es "¿Estoy adaptando mis habilidades al mundo aumentado por IA?" La historia sugiere que la demanda de tu trabajo aumentará, pero la naturaleza de ese trabajo cambiará.
-
----
-
-*Esta es la parte 1 de mi serie de reflexiones "¿Me quitará la IA el trabajo?"*
-
----
 
 **Enlaces:**
 - [William Stanley Jevons - The Coal Question (1865)](https://www.econlib.org/library/YPDBooks/Jevons/jvnCQ.html)
