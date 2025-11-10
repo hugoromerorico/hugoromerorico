@@ -96,7 +96,7 @@ En boca del CEO de Nvidia, Jensen Huang:
 
 He mencionado antes que el caso del incremento de data centers es particularmente relevante. Pienso que en este caso, el mapeo mental es bastante inmediato. Podemos pensar que las CPUs y GPUs son unidades pensantes cuya eficiencia se ha incrementado enormemente, siguiendo la ley de Moore año tras año.
 
-Si pensamos en las personas como unidades pensantes, podemos entender la IA como una vía de mejora de las personas, aumentando nuestra eficiencia. Esto pordría significar simplemente que seremos capaces de realizar muchas más tareas, reduciendo especialmente las tareas en las que la IA es buena, pero siempre trabajando como una unidad, es decir, siendo asistidos por ella, no reemplazados.
+Si pensamos en las personas como unidades pensantes, podemos entender la IA como una vía de mejora de las personas, aumentando nuestra eficiencia. Esto podría significar simplemente que seremos capaces de realizar muchas más tareas, reduciendo especialmente las tareas en las que la IA es buena, pero siempre trabajando como una unidad, es decir, siendo asistidos por ella, no reemplazados.
 
 En este caso, la Paradoja de Jevons podría aplicarse, el data center que son las empresas podría llegar a requerir de más unidades pensantes, y por tanto hacer que el trabajo sea más requerido que nunca.
 
