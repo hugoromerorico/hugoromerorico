@@ -4,3 +4,11 @@
 - Indeterminism in LLMs matches real experts indeterminism
 - Activable tabs in streamlit
 - Astro docker with pnpm
+- Build an openAI api compatible server with fastAPI
+- TOON format for AI agents
+- Micromuertes
+
+- Will I lose my job to AI: the jevons paradox
+- Will I lose my job to AI: the verifier's law
+- Will I lose my job to AI: intelligence as a commodity
+- Will I lose my job to AI: the law of accelerating returns
