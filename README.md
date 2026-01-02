@@ -1,4 +1,4 @@
-# [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Roboto&weight=700&size=26&pause=1000&color=000000&background=FFFFFF&center=true&vCenter=true&repeat=false&width=1000&height=100&multiline=true&lines=Hi+there%2C;I'm+Hugo+Romero)](https://git.io/typing-svg)
+# [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Roboto&weight=700&size=26&pause=500&color=000000&background=FFFFFF&center=true&vCenter=true&repeat=false&width=1000&height=100&multiline=true&lines=Hi+there%2C;I'm+Hugo+Romero)](https://git.io/typing-svg)
 
 
 **AI Engineer** with a **Computer Science + Business Administration** background, bridging technical innovation and business strategy to deliver production-ready solutions that **actually ship**.
@@ -60,7 +60,7 @@ I combine **critical thinking** with hands-on execution, building agentic workfl
     <a href="https://www.linkedin.com/in/hugo-romero-rico/">
         <img src="https://skillicons.dev/icons?i=linkedin" />
     </a>
-    <a href="https://hugoromerorico.github.io/">
+    <a href="https://hugo.gutan.dev/">
         <img src="https://skillicons.dev/icons?i=htmx" />
     </a>
     <a href="https://www.github.com/hugoromerorico/">
