@@ -25,9 +25,9 @@ I like the idea of standing on the shoulders of giants. Mine, so far:
 ## Open Source
 
 A few contributions so far:
-    - [Pydantic](https://github.com/pydantic/pydantic), the Python library that enforces data types.
-    - [A2A](https://github.com/a2aproject/A2A), the communication protocol for AI agents talking to each other.
-    - [A2UI](https://a2ui.org/), communication protocol to allow AI agents to decide the UI.
+- [Pydantic](https://github.com/pydantic/pydantic), the Python library that enforces data types.
+- [A2A](https://github.com/a2aproject/A2A), the communication protocol for AI agents talking to each other.
+- [A2UI](https://a2ui.org/), communication protocol to allow AI agents to decide the UI.
 I'd like to do more. I believe in open source.
 
 ## Tech Stack
@@ -55,19 +55,17 @@ This used to be the list of stacks I considered myself an expert in. Switching b
 ### Deploying infrastructure
 ![Terraform](https://img.shields.io/badge/Terraform-623CE4?style=flat&logo=terraform&logoColor=white)
 ![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=flat&logo=ansible&logoColor=white)
-
-I also like the idea behind [Pulumi](https://www.pulumi.com/).
+ I also like the idea behind [Pulumi](https://www.pulumi.com/).
 
 ### Frontend
 ![Astro](https://img.shields.io/badge/Astro-000000?style=flat&logo=astro&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
-(In that order)
+ (In that order)
 
 ### Infra
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)
-
-I also like the idea of [unikernels](https://en.wikipedia.org/wiki/Unikernel).
+ I also like the idea of [unikernels](https://en.wikipedia.org/wiki/Unikernel).
 
 ## Connect
 
@@ -88,6 +86,7 @@ I'm always up for connecting and meeting new people. Reach me here:
     </a>
 </div>
 
+---
 I lost access to my other GitHub account when I left a company. If you're curious about my sad, mostly-empty contribution graph over here ( [hugoromerorico]((https://github.com/hugoromerorico)) ), the other account is [hugo-romero-mm](https://github.com/hugo-romero-mm).
 
 ---
