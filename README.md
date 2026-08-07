@@ -10,17 +10,19 @@ After years doing AI at a large company, I made the jump to the startup world as
 
 ## Problem Solving
 
-I fell in love with programming while studying mathematics engineering, when I discovered Python. I later switched into a dual degree in Computer Science and Business Administration with a Machine Learning specialization, which ended with a university research project using [genetic algorithms](https://en.wikipedia.org/wiki/Genetic_algorithm) to find patterns in real customer data. Back when [NLP](https://en.wikipedia.org/wiki/Natural_language_processing) was only another field of AI.
+I fell in love with programming while studying mathematics engineering, when I discovered Python. That led me into a dual degree in Computer Science and Business Administration with a Machine Learning specialization, capped off by a university research project using [genetic algorithms](https://en.wikipedia.org/wiki/Genetic_algorithm) and [association rules](https://en.wikipedia.org/wiki/Association_rule_learning) to find patterns in real customer data, back when [NLP](https://en.wikipedia.org/wiki/Natural_language_processing) was only another field of AI.
 
-I started writing backend code in Java and Python, moved into AI at the same company, and ended up leading the team responsible for architecture, infrastructure, and innovation for AI systems serving millions of customers.
+Yes, I miss the sensation of getting lost for hours into programming, line by line, char by char.
+No, I don't do that anymore.
 
-Yes, I miss the flow of sitting down and writing every line of a program myself. I don't get to do that much these days.
+From there I started writing backend code in Java, moved into AI at that same company, and ended up leading the team responsible for architecture, infrastructure, and innovation for AI systems serving millions of customers. 
 
-What never left is the problem solving itself. It started with math olympiads in high school, moved into competitive programming ([HashCode](https://en.wikipedia.org/wiki/Hash_Code_(programming_competition)) friends & pizza was an unbeatable plan), then became designing scalable AI architectures inside a large company, and now shows up as strategy: how to build an AI native company, how to bring AI into an existing one, how to approach a client who doesn't know where to start. It's all the same coin. Richard Rumelt put it better than I could: [strategy is problem solving](https://www.youtube.com/watch?v=83vczUPiMv0).
+Still my apporach (and passion) is always problem solving. It started with math olympiads in high school, then moved into competitive programming ([HashCode](https://en.wikipedia.org/wiki/Hash_Code_(programming_competition)) friends & pizza was an unbeatable plan), and later became designing scalable AI architectures inside a large company. Today it shows up as strategy: how to build an AI native company, how to bring AI into an existing one, how to approach a client who doesn't know where to start. It's all the same coin, really. Richard Rumelt put it better than I could: [strategy is problem solving](https://www.youtube.com/watch?v=83vczUPiMv0).
 
 I like the idea of standing on the shoulders of giants. Mine, so far:
 - Strategy: Richard Rumelt
 - Complex problem solving: Javier Recuenco
+- AI & Hands-on engineering: The list would be endless, here are a few: Andrej Karpathy, Chip Huyen, Paul Iusztin, Maxime Labonne, Paolo Perrone, Miguel Otero...
 
 ## Open Source
 
@@ -28,6 +30,7 @@ A few contributions so far:
 - [Pydantic](https://github.com/pydantic/pydantic), the Python library that enforces data types.
 - [A2A](https://github.com/a2aproject/A2A), the communication protocol for AI agents talking to each other.
 - [A2UI](https://a2ui.org/), communication protocol to allow AI agents to decide the UI.
+
 I'd like to do more. I believe in open source.
 
 ## Tech Stack
