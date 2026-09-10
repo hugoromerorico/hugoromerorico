@@ -26,7 +26,7 @@ I like the idea of standing on the shoulders of giants. Mine, so far:
 
 ## Open Source
 
-A few contributions so far:
+A few contributions so far to:
 - [Pydantic](https://github.com/pydantic/pydantic), the Python library that enforces data types.
 - [A2A](https://github.com/a2aproject/A2A), the communication protocol for AI agents talking to each other.
 - [A2UI](https://a2ui.org/), communication protocol to allow AI agents to decide the UI.
