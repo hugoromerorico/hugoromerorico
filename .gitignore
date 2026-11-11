@@ -1,2 +1,5 @@
 .cursor/
 .DS_Store
+.agents/
+ABOUT-ME.md
+skills-lock.json
